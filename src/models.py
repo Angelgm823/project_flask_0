@@ -15,7 +15,7 @@ class User(db.Model):
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key = True, autoincrement = True)
-    created_by = db.Column(db.Integer, db.ForeignKey('user.id'), nullable = False)
+    created_by = db.Column(db.Integer, db.ForeignKey('user.id'), nullable = True)
     titulo = db.Column(db.String(100), nullable=False)
     desc = db.Column(db.Text)
     state = db.Column(db.Boolean, default= False)
